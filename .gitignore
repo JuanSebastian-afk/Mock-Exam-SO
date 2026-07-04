@@ -1,0 +1,21 @@
+# Ignorar la carpeta temporal de construcción de CMake
+/build/
+
+# Ignorar los ejecutables generados (excepto si quieres mantener la carpeta vacía)
+/bin/*
+!/bin/.gitkeep
+
+# Ignorar la documentación generada por Doxygen (se genera localmente, no se sube a Git)
+/docs/html/
+/docs/latex/
+Doxyfile
+
+# Ignorar archivos de sistemas operativos
+.DS_Store
+Thumbs.db
+
+# Ignorar configuraciones de editores de código (VSCode, CLion, etc.)
+.vscode/
+.idea/
+*.suo
+*.user
