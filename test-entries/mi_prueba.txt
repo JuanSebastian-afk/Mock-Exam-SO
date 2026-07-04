@@ -1,0 +1,4 @@
+# Tag; BurstTime; ArrivalTime; Queue; Priority
+P1; 6; 0; 3
+P2; 2; 2; 1
+P3; 3; 4; 2

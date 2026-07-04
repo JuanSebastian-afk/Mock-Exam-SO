@@ -11,29 +11,27 @@ bool FileManager::loadProcesses(std::string filePath, Queue& mainQueue) {
     }
 
     std::string line;
-    // Leer línea por línea
     while (std::getline(file, line)) {
-        // Ignorar encabezados o líneas vacías
         if (line.empty() || line[0] == '#' || line.find("Tag") != std::string::npos) {
             continue;
         }
 
         std::stringstream ss(line);
-        std::string tag, at_str, bt_str, q_str;
+        std::string tag, bt_str, at_str, q_str;
         
-        // Asumiendo formato: Tag;ArrivalTime;BurstTime;Queue
+        // ¡CORRECCIÓN AQUÍ! El formato del profe es: Tag; BurstTime; ArrivalTime; Queue
         std::getline(ss, tag, ';');
-        std::getline(ss, at_str, ';');
-        std::getline(ss, bt_str, ';');
+        std::getline(ss, bt_str, ';'); // Primero se lee el Burst Time
+        std::getline(ss, at_str, ';'); // Luego el Arrival Time
         std::getline(ss, q_str, ';');
 
         if (!tag.empty()) {
-            float at = std::stof(at_str);
             float bt = std::stof(bt_str);
+            float at = std::stof(at_str);
             int q = std::stoi(q_str);
 
+            // Se respeta el orden del constructor: Process(tag, at, bt, q)
             Process* newProcess = new Process(tag, at, bt, q);
-            // El proceso ingresa por defecto a la cola que indica el archivo
             mainQueue.addProcessToQueue(newProcess, q - 1); 
         }
     }

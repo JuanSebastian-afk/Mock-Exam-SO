@@ -11,8 +11,6 @@
  * @copyright Copyright (c) 2026
  */
 
-/
-
 class Process {
 private:
     std::string tag;

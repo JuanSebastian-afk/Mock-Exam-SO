@@ -139,4 +139,4 @@ void Scheduler::setMetrics() {
     }
 }
 
-std::vector<Process*>& getHistoryProcesses() { return historyProcesses; }
+std::vector<Process*>& Scheduler::getHistoryProcesses() { return historyProcesses; }

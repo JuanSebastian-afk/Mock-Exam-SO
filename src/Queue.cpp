@@ -1,4 +1,5 @@
 #include "Queue.h"
+#include <stdexcept> // Necesario para std::out_of_range en el método getQueue()
 
 void Queue::addProcessToQueue(Process* process, int queueIndex) {
     if (queueIndex >= 0 && queueIndex < 3) {
@@ -22,7 +23,8 @@ std::vector<Process*>& Queue::getQueue(int queueIndex) {
     if (queueIndex >= 0 && queueIndex < 3) {
         return queues[queueIndex];
     }
-    return std::vector<Process*>(); // Retorna vacío si el índice es inválido
+    // Lanza un error si se pide una cola que no existe
+    throw std::out_of_range("Error: Indice de cola fuera de los limites (debe ser 0, 1 o 2)");
 }
 
 Process* Queue::getProcess(int processIndex) {
