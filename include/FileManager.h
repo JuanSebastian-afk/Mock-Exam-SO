@@ -17,7 +17,7 @@ class FileManager {
 public:
     /**
      * @brief Lee un archivo de texto con la lista de procesos y los carga en la cola principal.
-     * @details Parsea líneas separadas por punto y coma (;) respetando el formato de entrada del simulador[cite: 19, 21].
+     * @details Parsea líneas separadas por punto y coma (;) respetando el formato de entrada del simulador.
      * @param filePath Ruta del archivo de entrada a leer (ej. "mlq001.txt").
      * @param mainQueue Referencia a la clase Queue donde se cargarán los procesos instanciados.
      * @return true Si el archivo se leyó y procesó correctamente.
@@ -27,7 +27,7 @@ public:
 
     /**
      * @brief Genera un archivo de salida con el orden de ejecución y las métricas de los procesos.
-     * @details Muestra en el archivo de texto el WT, CT, RT, TAT y sus respectivos promedios[cite: 27, 29, 30].
+     * @details Muestra en el archivo de texto el WT, CT, RT, TAT y sus respectivos promedios.
      * @param filePath Ruta del archivo de salida a generar.
      * @param completedProcesses Referencia al vector histórico con los procesos ya finalizados.
      * @return true Si el archivo se generó y guardó correctamente.

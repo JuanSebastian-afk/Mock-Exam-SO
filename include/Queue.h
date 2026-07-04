@@ -26,16 +26,16 @@ public:
 
     /**
      * @brief Marca un proceso como completado y lo remueve de su cola actual.
-     * * @param tag Etiqueta identificadora del proceso a completar.
+     * @param tag Etiqueta identificadora del proceso a completar.
      */
     void processCompleted(std::string tag);
 
     /**
      * @brief Obtiene todos los procesos almacenados en una cola específica.
-     * * @param queueIndex Índice de la cola a consultar.
+     * @param queueIndex Índice de la cola a consultar.
      * @return std::vector<Process*> Vector con los punteros a los procesos de esa cola.
      */
-    std::vector<Process*> getQueue(int queueIndex);
+    std::vector<Process*>& getQueue(int queueIndex);
 
     /**
      * @brief Obtiene un proceso específico dentro de la estructura general mediante su índice.
